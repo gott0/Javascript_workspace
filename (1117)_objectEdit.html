@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+           // 객체(태그)편집 메소드(추가,삭제,수정)
+           // 기존요소를 앞에다 작성하고 추가되는 요소를 뒤에다 작성 - 1번째 형식
+           // 추가되는 요소를 앞에다 작성하고 기존요소를 뒤에다 작성 - 2번째 형식 (둘 다 같음)
+
+            // $("#wrap p:eq(2)").after("<p>After</p>"); // 2번 인덱스 후방에 추가
+            // $("#wrap p:eq(1)").before("<p>before</p>"); // 1번 인덱스 전방에 추가
+            // $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");  // (2번째 형식)
+            
+            // // =======================
+
+            // // append(), prepend()
+            // $("<li>appendTo</li>").appendTo("#listZone");
+            // $("#listZone").prepend("<li>prepend</li>");
+            
+            // // =======================
+
+            // // clone(), empty(), remove()
+            // let objCopy = $(".box1").children().clone(); //복제
+            // $(".box2").remove(); // 해당 요소 삭제
+            // $(".box3").empty(); //하위 요소만 삭제
+            // $(".box3").append(objCopy); //복제한 대상 추가
+            
+            // =======================
+
+            // replaceWith() , replaceAll()
+            $("h2").replaceWith("<h3>replaceWith()</h3>");
+            $("<p>replaceAll()</p>").replaceAll("div");
+
+            // =======================
+
+            //unwrap(), wrap(), wrapAll(), wrapInner()
+            $("strong").unwrap();
+            $(".ct1").wrap("<div />");
+            $(".ct2").wrapAll("<div />");
+            $("li").wrapInner("<h3 />");
+
+         });
+    </script>
+</head>
+<body>
+    <h1 id="tit_1">
+    <strong>객체 조작 및 생성</strong>
+    </h1>
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+    <ul>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+
+    <hr><!-- ======================= -->
+
+    <section class="box1">
+        <h2>제목1</h2>
+        <div>내용1</div>
+        <div>내용2</div>
+    </section>
+    
+    <section class="box2">
+        <h2>제목2</h2>
+        <div>내용3</div>
+        <div>내용4</div>
+    </section>
+
+    <hr><!-- ======================= -->
+
+    <!-- <div class="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div> -->
+
+    <hr><!-- ======================= -->
+
+    <!-- <ul id="listZone">
+        <li>리스트</li>
+    </ul> -->
+
+    <hr><!-- ======================= -->
+
+    <!-- <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p> 
+    </div> -->
+  
+
+</body>
+</html>

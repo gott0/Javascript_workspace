@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <!-- <script src="myscript.js"></script>   -->
+    <!-- => 외부에서 제어하는 방식 (.js 파일 생성) -->
+
+
+    <!-- 스크립트 태그를 이용하여 제어하는 방식 -->
+    <!-- <script>
+        alert("Hello Word!!!");
+    </script> -->
+
+    <script>
+        // document.write("환영합니다."); //<body> 브라우져 화면에 결과를 출력하는 역할
+           // ;를 안 붙여도 오류가 안남
+
+
+
+        //ES6
+        //변수 = var,let,const
+        
+        //변수 선언 시 주의사항 p.42
+
+        var age;
+        age = 10;
+
+        document.write(age);
+        document.write("<br>"); //줄바꿈 문장
+
+        age = 20;
+        document.write(age + "<br>"); // 출력과 줄바꿈 동시에
+
+        age="Hello";    // var형식은 타입체크를 하지않는다.
+        document.write(age + "<br>");
+
+        var age = "안녕";      // 같은 이름으로 변수를 중복선언 가능
+        document.write(age + "<br>");
+
+        var name;     
+        document.write(name + "<br>");  //아무값도 안 찍힘 => undefined(변수가 비어있는 상태) 
+
+        name = "홍길동"; // var로 선언된 변수의 호이스팅(hoisting): 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미 
+        
+        name = '이순신'; // 자바스크립트는 쌍따옴표, 홑따옴표 상관없음
+                        // 변수는 대소문자를 구분!!
+
+            //  var 특징 : 
+            //     1. 같은이름으로 중복선언 가능
+            //     2. undefined & hoisting
+            //     3. 전역변수 개념
+
+
+        let num;
+        num = 1;
+        document.write(num + "<br>");
+
+        num = 100;
+        document.write(num + "<br>");
+
+        num = "홍길동";
+
+        let num2;      // 같은 이름으로 변수를 중복선언 불가능!
+        num2 = 1000;
+        document.write(num2 + "<br>");
+
+            //  let 특징 (var와 상반됨): 
+            //     1. 같은이름으로 중복선언 불가능
+            //     2. hoisting 불가능
+            //     3. 블록레벨 스코프(지역변수 개념)
+         
+            //var와 let의 차이 비교
+                var x = 1;
+
+                if(true){
+                    var x = 5; // 전역변수
+                }
+
+                document.write(x + "<br>") ; // 5
+
+                //===================
+
+                let y = 1;     //( 블록 밖에서의  y )
+
+                if(true){
+                    let y = 5; // 지역변수(블록레벨 스코프 : 블록 안에서의  y )
+                }
+
+                document.write(y + "<br>") ; // 1
+
+
+        const name =  'hong';
+        document.write(name + "<br>");
+
+        // name =  'kim'; //error
+        // document.write(name + "<br>");
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <!-- <button type="button" onclick="javascript:alert('Hello Word!!');">경고창 실행</button>  -->
+    <!-- 태그 안에서 직접 제어하는 (embedded) 방식 -->
+    <!-- ""(쌍따옴표)안에서는 ''(홑따옴표)로 써야됨 -->
+    
+    
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //BOM은 객체 생성 필요 x
+        //BOM -p.112
+        // window.open(결과화면, 창의 이름, 창의 옵션(크기,메뉴표시...));
+        
+        // window.open("http://www.naver.com", "naver", "width = 350, height = 400, left= 50, top = 10, scrollbars = no");
+
+    </script>
+</head>
+<body>
+
+<h1>팝업창 입니다.</h1>
+
+<p>
+    <img src="image/popup1.jpg" usemap="#into" alt="신간 책 소개">
+    <map name="into"  id="into">
+        <area shape="rect" coords="230,368,280,390" href="#" alt="창닫기" onclick="window.close();">
+    </map>
+</p>
+
+</body>
+</html>

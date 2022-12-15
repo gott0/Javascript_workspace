@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 객체란 이름(key, name)과 값(value)로 구성된 프로퍼티의 집합입니다.
+        // 원시타입(primitive type)을 제외한 모든 것이 객체(object)로 정의됩니다.
+        
+        // 객체의 정의와 프로퍼티 참조방식
+        // 1. object.property (Dot Notation)
+        // 2. object['property'] (Bracket Notation)
+
+        // let obj = {    // let obj = [] - 배열의 선언 (괄호가 다름 혼동 금지!)
+        //     cat: "meow",
+        //     dog: "woof"
+        // } // 객체의 정의
+
+        // console.log(obj.cat); //객체의 사용(참조) - (Dot Notation 방식)
+        // console.log(obj.dog);
+
+        // console.log(obj["cat"]); // key값 주기 (key값은 문자열로 부여) - (Bracket Notation 방식)
+        // console.log(obj["dog"]);
+
+        //가장 중요한 차이점은 bracket 안에 변수를 담을 수  있다는 점
+
+        // let cat = "cat";
+        // let dog = "dog";
+        // console.log(obj[cat]);
+        // console.log(obj[dog]);
+
+
+        // let obj = {       //객체
+        //     cat: "meow",    // 지역변수
+        //     dog: "woof",
+        //     animal:function(){    //지역함수
+        //         return `현재 동물은 ${this.cat}과 ${this.dog}이 있습니다.`;  // `(백틱)은 숫자 1 왼쪽의 키, 홑따옴표 아님!
+        //     }                                                              // `${this. }` 템플릿 표현 방식
+        // }
+
+        // console.log(obj.animal());
+
+
+        // let obj = {     // 객체의 정의
+        //     cat: "meow",
+        //     dog: "woof"
+        // } 
+
+        // 객체에 값 추가
+        // obj.cow = "moo";
+        // obj["pig"] = "oink";
+
+        // console.log(obj.cow);
+        // console.log(obj.pig);
+
+        // 객체의 값 삭제
+        // delete obj.cat;
+        // console.log(obj.cat);  //삭제되어 undefined 출력
+
+        // 객체의 값 수정
+        // obj.cat = "abc"
+        // console.log(obj.cat);
+
+        // 객체 데이터 조회
+        // for in
+        // for(let key in obj){
+        //     console.log(`key는 ${key}, value는 ${obj[key]}`);
+        // }
+
+        
+
+        //객체의 생성방식 (2)
+        //new Object()
+        //값이 없는 빈 객체 생성
+
+        // let animal = new Object();
+        // animal.cat = "meow";
+        // animal.dog = "woof";
+        // animal.cow = "moo";
+
+        // console.log(animal.dog);
+
+
+
+
+        //객체의 생성방식 (3)       
+        //객체 생성자 함수         
+        //생성을 해서 사용해야 한다.(new)                                             
+
+        // function Animal(name,sound){
+        //     this.name = name;
+        //     this.sound = sound;
+
+        //     this.animal = function(){ //  :대신 =을 쓴다   
+        //         return `현재 동물은 ${this.name}이고 ${this.sound}의 울음소리를 가집니다.`;  
+        //     }     
+        // }
+
+        // let cat = new Animal("cat","meow");
+        // let dog = new Animal("dog","woof");
+
+        // console.log(cat.animal());
+        // console.log(dog.animal());
+
+        //p.149 -> 프로토타입으로 바꿔보기 (메모리의 효율↑) = 생성자 객체 안의 메소드 밖으로 빼고 메소드명 앞 this 대신 CheckWeigth.prototype을 붙여줌
+        function CheckWeigth(name,heigth,weigth){
+            this.userName = name;
+            this.userHeigth = heigth;
+            this.userWeigth = weigth;
+            this.minWeigth;
+            this.maxWeigth;
+            
+        }
+
+        CheckWeigth.prototype.getInfo = function(){
+            var str = ""
+            str += "이름"+ this.userName + ",";
+            str += "키"+ this.userHeigth + ",";
+            str += "몸무게"+ this.userWeigth + "<br>";
+
+            return str;
+        }
+
+        CheckWeigth.prototype.getResult = function(){
+            this.minWeigth = (this.userHeigth-100)*0.9-5;
+            this.maxWeigth = (this.userHeigth-100)*0.9+5;
+
+            if(this.userWeigth >= this.minWeigth && this.userWeigth <= this.maxWeigth){
+                return "정상 몸무게입니다."
+            }else if(this.userWeigth < this.minWeigth){
+                return "정상 몸무게보다 미달입니다."
+            }else { 
+                "정상 몸무게보다 초과입니다."
+            }
+        }
+
+        var jang = new CheckWeigth("장보리",168,62);
+        var park = new CheckWeigth("박달재",180,88);
+
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(jang.getResult());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
